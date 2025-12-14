@@ -1028,14 +1028,14 @@
                 
                 <div class="footer-contact">
                     <h3>संपर्क करें</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> सीएससी सेंटर, सूरजगंज</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-envelope"></i> info@sujitcsc.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> बसंत पट्टी</p>
+                    <p><i class="fas fa-phone"></i> +91 72098 90909</p>
+                    <p><i class="fas fa-envelope"></i> sujitcsc cyber@gmail.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SUJIT CSC CYBER. सर्वाधिकार सुरक्षित।</p>
+                <p>&copy; 2025 SUJIT CSC CYBER. सर्वाधिकार सुरक्षित।</p>
             </div>
         </div>
     </footer>
