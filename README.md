@@ -750,7 +750,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>SUJIT CSC CYBER - फोटो और PDF टूल्स</h2>
+            <h2>फोटो और PDF टूल्स</h2>
             <p>आपकी तस्वीरों और PDF फाइलों के लिए सर्वोत्तम टूल्स। तेज़, सुरक्षित और मुफ्त सेवाएं।</p>
         </div>
     </section>
