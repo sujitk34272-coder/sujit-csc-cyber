@@ -1755,3 +1755,6 @@
     </script>
 </body>
 </html>
+<amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-9474456364191277">
+</amp-auto-ads>
