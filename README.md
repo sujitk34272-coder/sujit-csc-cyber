@@ -2310,3 +2310,142 @@
          crossorigin="anonymous"></script>
 </body>
 </html>
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2>Unlimited access to all our tools</h2>
+        <div class="features-grid">
+            <!-- Row 1 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-word"></i>
+                </div>
+                <h3>Convert PDF to Word</h3>
+                <p>Convert PDF documents to editable Word files with perfect formatting.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Convert Word to PDF</h3>
+                <p>Transform Word documents into professional PDF files instantly.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-image"></i>
+                </div>
+                <h3>Convert PDF to JPG</h3>
+                <p>Extract images or convert PDF pages to JPG format.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h3>Convert JPG to PDF</h3>
+                <p>Combine multiple JPG images into a single PDF document.</p>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h3>Convert PDF to Excel</h3>
+                <p>Extract tables from PDF to editable Excel spreadsheets.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-table"></i>
+                </div>
+                <h3>Convert Excel to PDF</h3>
+                <p>Convert Excel sheets to PDF while preserving formatting.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-powerpoint"></i>
+                </div>
+                <h3>Convert PDF to PowerPoint</h3>
+                <p>Transform PDF presentations into editable PowerPoint slides.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-presentation"></i>
+                </div>
+                <h3>Convert PowerPoint to PDF</h3>
+                <p>Convert PowerPoint presentations to shareable PDF files.</p>
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>Create Template</h3>
+                <p>Design and create custom templates for your documents.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Split PDF</h3>
+                <p>Divide large PDF files into smaller, manageable documents.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h3>Merge PDF</h3>
+                <p>Combine multiple PDF files into one organized document.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-compress"></i>
+                </div>
+                <h3>Compress PDF</h3>
+                <p>Reduce PDF file size without compromising quality.</p>
+            </div>
+            
+            <!-- Row 4 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <h3>Edit PDF</h3>
+                <p>Edit text, images, and pages in your PDF documents.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Add Watermark</h3>
+                <p>Add text or image watermarks to protect your documents.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-redo"></i>
+                </div>
+                <h3>Rotate PDF</h3>
+                <p>Rotate PDF pages to correct orientation issues.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-signature"></i>
+                </div>
+                <h3>Sign PDF</h3>
+                <p>Add digital signatures to your PDF documents securely.</p>
+            </div>
+        </div>
+    </div>
+</section>
