@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -23,7 +22,6 @@
             --dark-color: #2c3e50;
             --success-color: #27ae60;
             --warning-color: #f39c12;
-            --info-color: #17a2b8;
         }
         
         body {
@@ -156,17 +154,16 @@
             border-radius: 15px;
             padding: 0.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            flex-wrap: wrap;
         }
         
         .tab-btn {
-            padding: 12px 20px;
+            padding: 12px 24px;
             border: none;
             background: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--dark-color);
             cursor: pointer;
@@ -177,8 +174,6 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            min-width: 160px;
-            margin: 2px;
         }
         
         .tab-btn:hover {
@@ -385,28 +380,6 @@
             background-color: #e67e22;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
-        }
-        
-        .btn-success {
-            background-color: var(--success-color);
-            color: white;
-        }
-        
-        .btn-success:hover {
-            background-color: #219653;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
-        }
-        
-        .btn-info {
-            background-color: var(--info-color);
-            color: white;
-        }
-        
-        .btn-info:hover {
-            background-color: #138496;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
         }
         
         .btn:disabled {
@@ -751,130 +724,6 @@
             color: #666;
             margin-top: 5px;
         }
-        
-        /* File List */
-        .file-list {
-            margin-top: 1.5rem;
-            max-height: 200px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .file-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 12px;
-            background-color: white;
-            border-radius: 5px;
-            margin-bottom: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .file-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .file-name {
-            flex: 1;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .file-size {
-            font-size: 0.8rem;
-            color: #666;
-            margin-left: 10px;
-        }
-        
-        .remove-file {
-            background: none;
-            border: none;
-            color: var(--accent-color);
-            cursor: pointer;
-            font-size: 1rem;
-            margin-left: 10px;
-        }
-        
-        /* Page Layout Options */
-        .layout-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 1rem;
-        }
-        
-        .layout-option {
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .layout-option:hover {
-            border-color: var(--secondary-color);
-            background-color: rgba(52, 152, 219, 0.05);
-        }
-        
-        .layout-option.active {
-            border-color: var(--secondary-color);
-            background-color: rgba(52, 152, 219, 0.1);
-        }
-        
-        .layout-option i {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            color: var(--secondary-color);
-        }
-        
-        /* Image Grid Preview */
-        .image-grid-preview {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 1rem;
-            max-height: 200px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .image-grid-item {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%; /* Square aspect ratio */
-            background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .image-grid-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .image-number {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
     </style>
 </head>
 <body>
@@ -912,12 +761,7 @@
                 <i class="fas fa-compress-alt"></i> फोटो कॉम्प्रेसर
             </button>
             <button class="tab-btn" id="pdfTabBtn" data-tool="pdf">
-                <i class="fas fa-file-pdf"></i> PDF से PNG
-            </button>
-            <button class="tab-btn" id="pngToPdfTabBtn" data-tool="pngToPdf">
-                <i class="fas fa-images"></i> PNG से PDF
-            </button>
-            <button class="tab-btn" id="pdfToJpgTabBtn" data-tool="pdfToJpg">
+                <i class="fas fa-file-pdf"></i> PDF से PNG कन्वर्टर
             </button>
         </div>
     </div>
@@ -1122,226 +966,6 @@
                 </section>
             </div>
         </div>
-
-        <!-- PNG to PDF Converter Tool -->
-        <div class="tool-container" id="pngToPdfTool">
-            <div class="main-content">
-                <!-- Upload Section -->
-                <section class="upload-section">
-                    <h2 class="section-title"><i class="fas fa-images"></i> PNG इमेजेस अपलोड करें</h2>
-                    
-                    <div class="upload-area" id="pngToPdfUploadArea">
-                        <i class="fas fa-file-image"></i>
-                        <p>क्लिक करें या PNG इमेजेस यहाँ खींचें</p>
-                        <span>PNG फाइलें (अधिकतम 20 इमेजेस, प्रत्येक 5MB)</span>
-                        <input type="file" id="pngToPdfFileInput" class="fileInput" accept=".png,image/png" multiple>
-                    </div>
-                    
-                    <!-- File List -->
-                    <div class="file-list" id="pngFileList" style="display: none;">
-                        <!-- Files will be added here dynamically -->
-                    </div>
-                    
-                    <div class="controls">
-                        <div class="control-group">
-                            <label>पेज लेआउट:</label>
-                            <div class="layout-options">
-                                <div class="layout-option active" data-layout="portrait">
-                                    <i class="fas fa-portrait"></i>
-                                    <div>पोर्ट्रेट</div>
-                                </div>
-                                <div class="layout-option" data-layout="landscape">
-                                    <i class="fas fa-landscape"></i>
-                                    <div>लैंडस्केप</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label for="pageSize">पेज साइज:</label>
-                            <select id="pageSize" class="slider-container" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">
-                                <option value="a4">A4</option>
-                                <option value="letter">Letter</option>
-                                <option value="legal">Legal</option>
-                                <option value="a3">A3</option>
-                            </select>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label for="imageQuality">इमेज क्वालिटी: <span id="imageQualityValue">90</span>%</label>
-                            <div class="slider-container">
-                                <span>10</span>
-                                <input type="range" id="imageQuality" min="10" max="100" value="90">
-                                <span>100</span>
-                            </div>
-                        </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="addPageNumbers" checked>
-                            <label for="addPageNumbers">पेज नंबर जोड़ें</label>
-                        </div>
-                    </div>
-                    
-                    <div class="buttons">
-                        <button class="btn btn-success" id="convertToPdfBtn">
-                            <i class="fas fa-file-pdf"></i> PDF बनाएं
-                        </button>
-                        <button class="btn btn-secondary" id="resetPngToPdfBtn">
-                            <i class="fas fa-redo"></i> रीसेट करें
-                        </button>
-                    </div>
-                </section>
-                
-                <!-- Preview Section -->
-                <section class="preview-section">
-                    <h2 class="section-title"><i class="fas fa-eye"></i> इमेजेस प्रीव्यू और PDF</h2>
-                    
-                    <div class="image-container">
-                        <div class="image-box">
-                            <h3>इमेजेस प्रीव्यू</h3>
-                            <div class="image-grid-preview" id="pngImagesPreview">
-                                <div class="image-placeholder">
-                                    <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                    <p>PNG इमेजेस अपलोड करने पर यहाँ दिखेंगी</p>
-                                </div>
-                            </div>
-                            <div class="image-info">
-                                <span id="pngImagesCount">इमेजेस: 0</span>
-                                <span id="pngImagesTotalSize">कुल आकार: --</span>
-                            </div>
-                        </div>
-                        
-                        <div class="image-box">
-                            <h3>PDF रिजल्ट</h3>
-                            <div class="pdf-preview-container" id="pdfResult">
-                                <i class="fas fa-file-pdf" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                <p>कन्वर्टेड PDF यहाँ दिखेगा</p>
-                            </div>
-                            <div class="image-info">
-                                <span id="pdfResultSize">आकार: --</span>
-                                <span id="pdfResultPages">पेज: --</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="conversion-stats">
-                        <div class="conversion-info" id="pngToPdfConversionInfo">
-                            <p>PNG इमेजेस अपलोड करें और PDF बनाने के लिए बटन दबाएं</p>
-                        </div>
-                        
-                        <div class="buttons">
-                            <button class="btn btn-primary" id="downloadPdfBtn" disabled>
-                                <i class="fas fa-download"></i> PDF डाउनलोड करें
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!-- PDF to JPG Converter Tool -->
-        <div class="tool-container" id="pdfToJpgTool">
-            <div class="main-content">
-                <!-- Upload Section -->
-                <section class="upload-section">
-                    <h2 class="section-title"><i class="fas fa-file-upload"></i> PDF अपलोड करें</h2>
-                    
-                    <div class="upload-area" id="pdfToJpgUploadArea">
-                        <i class="fas fa-file-pdf"></i>
-                        <p>क्लिक करें या PDF यहाँ खींचें</p>
-                        <span>PDF फाइलें (अधिकतम आकार: 10MB)</span>
-                        <input type="file" id="pdfToJpgFileInput" class="fileInput" accept=".pdf,application/pdf">
-                    </div>
-                    
-                    <div class="controls">
-                        <div class="control-group">
-                            <label for="jpgQuality">JPG क्वालिटी: <span id="jpgQualityValue">85</span>%</label>
-                            <div class="slider-container">
-                                <span>10</span>
-                                <input type="range" id="jpgQuality" min="10" max="100" value="85">
-                                <span>100</span>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label for="jpgScale">स्केल फैक्टर: <span id="jpgScaleValue">1.5</span>x</label>
-                            <div class="slider-container">
-                                <span>0.5</span>
-                                <input type="range" id="jpgScale" min="0.5" max="3" value="1.5" step="0.1">
-                                <span>3.0</span>
-                            </div>
-                            <small>उच्च स्केल = बेहतर रिज़ॉल्यूशन, लेकिन बड़ी फाइल</small>
-                        </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="convertAllPagesToJpg" checked>
-                            <label for="convertAllPagesToJpg">सभी पेज कन्वर्ट करें</label>
-                        </div>
-                        
-                        <div class="page-selector" id="pdfToJpgPageSelector" style="display: none;">
-                            <label for="pdfToJpgPageRange">पेज रेंज (उदा: 1, 1-3, 1,3,5):</label>
-                            <input type="text" id="pdfToJpgPageRange" placeholder="सभी पेज">
-                            <div class="hint">खाली छोड़ने पर सभी पेज कन्वर्ट होंगे</div>
-                        </div>
-                    </div>
-                    
-                    <div class="buttons">
-                        <button class="btn btn-info" id="convertPdfToJpgBtn">
-                            <i class="fas fa-sync-alt"></i> JPG में कन्वर्ट करें
-                        </button>
-                        <button class="btn btn-secondary" id="resetPdfToJpgBtn">
-                            <i class="fas fa-redo"></i> रीसेट करें
-                        </button>
-                    </div>
-                </section>
-                
-                <!-- Preview Section -->
-                <section class="preview-section">
-                    <h2 class="section-title"><i class="fas fa-eye"></i> PDF प्रीव्यू और JPG रिजल्ट</h2>
-                    
-                    <div class="image-container">
-                        <div class="image-box">
-                            <h3>PDF प्रीव्यू</h3>
-                            <div class="pdf-preview-container" id="pdfToJpgPreview">
-                                <i class="fas fa-file-pdf" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                <p>PDF अपलोड करने पर यहाँ दिखेगा</p>
-                            </div>
-                            <div class="image-info">
-                                <span id="pdfToJpgFileSize">आकार: --</span>
-                                <span id="pdfToJpgPageCount">पेज: --</span>
-                            </div>
-                        </div>
-                        
-                        <div class="image-box">
-                            <h3>JPG रिजल्ट</h3>
-                            <div class="image-placeholder" id="jpgResult">
-                                <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                <p>कन्वर्टेड JPG यहाँ दिखेगा</p>
-                            </div>
-                            <div class="image-info">
-                                <span id="jpgCount">JPG: --</span>
-                                <span id="jpgTotalSize">कुल आकार: --</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="conversion-stats">
-                        <div class="conversion-info" id="pdfToJpgConversionInfo">
-                            <p>PDF अपलोड करें और JPG में कन्वर्ट करने के लिए बटन दबाएं</p>
-                        </div>
-                        
-                        <div class="buttons">
-                            <button class="btn btn-primary" id="downloadAllJpgBtn" disabled>
-                                <i class="fas fa-download"></i> सभी JPG डाउनलोड करें (ZIP)
-                            </button>
-                            <button class="btn btn-warning" id="downloadSingleJpgBtn" disabled>
-                                <i class="fas fa-file-download"></i> पहला JPG डाउनलोड करें
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
         
         <!-- Features Section -->
         <section class="features" id="features">
@@ -1395,9 +1019,7 @@
                     <h3>टूल्स</h3>
                     <ul>
                         <li><a href="#" id="photoToolLink">फोटो कॉम्प्रेसर</a></li>
-                        <li><a href="#" id="pdfToolLink">PDF से PNG</a></li>
-                        <li><a href="#" id="pngToPdfToolLink">PNG से PDF</a></li>
-                        <li><a href="#" id="pdfToJpgToolLink">PDF से JPG</a></li>
+                        <li><a href="#" id="pdfToolLink">PDF से PNG कन्वर्टर</a></li>
                         <li><a href="#features">सुविधाएँ</a></li>
                         <li><a href="#contact">संपर्क</a></li>
                     </ul>
@@ -1424,533 +1046,362 @@
             // ============================================
             const photoTabBtn = document.getElementById('photoTabBtn');
             const pdfTabBtn = document.getElementById('pdfTabBtn');
-            const pngToPdfTabBtn = document.getElementById('pngToPdfTabBtn');
-            const pdfToJpgTabBtn = document.getElementById('pdfToJpgTabBtn');
             const photoTool = document.getElementById('photoTool');
             const pdfTool = document.getElementById('pdfTool');
-            const pngToPdfTool = document.getElementById('pngToPdfTool');
-            const pdfToJpgTool = document.getElementById('pdfToJpgTool');
-            
             const photoToolLink = document.getElementById('photoToolLink');
             const pdfToolLink = document.getElementById('pdfToolLink');
-            const pngToPdfToolLink = document.getElementById('pngToPdfToolLink');
-            const pdfToJpgToolLink = document.getElementById('pdfToJpgToolLink');
             
-            // Function to show a specific tool and hide others
-            function showTool(toolId) {
-                // Remove active class from all tabs
-                [photoTabBtn, pdfTabBtn, pngToPdfTabBtn, pdfToJpgTabBtn].forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // Hide all tool containers
-                [photoTool, pdfTool, pngToPdfTool, pdfToJpgTool].forEach(tool => {
-                    tool.classList.remove('active');
-                });
-                
-                // Activate the selected tab
-                document.getElementById(toolId + 'TabBtn').classList.add('active');
-                
-                // Show the selected tool
-                document.getElementById(toolId + 'Tool').classList.add('active');
+            // Switch to photo tool
+            function showPhotoTool() {
+                photoTabBtn.classList.add('active');
+                pdfTabBtn.classList.remove('active');
+                photoTool.classList.add('active');
+                pdfTool.classList.remove('active');
+            }
+            
+            // Switch to PDF tool
+            function showPdfTool() {
+                pdfTabBtn.classList.add('active');
+                photoTabBtn.classList.remove('active');
+                pdfTool.classList.add('active');
+                photoTool.classList.remove('active');
             }
             
             // Event listeners for tabs
-            photoTabBtn.addEventListener('click', () => showTool('photo'));
-            pdfTabBtn.addEventListener('click', () => showTool('pdf'));
-            pngToPdfTabBtn.addEventListener('click', () => showTool('pngToPdf'));
-            pdfToJpgTabBtn.addEventListener('click', () => showTool('pdfToJpg'));
-            
-            // Event listeners for footer links
+            photoTabBtn.addEventListener('click', showPhotoTool);
+            pdfTabBtn.addEventListener('click', showPdfTool);
             photoToolLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                showTool('photo');
+                showPhotoTool();
             });
             pdfToolLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                showTool('pdf');
-            });
-            pngToPdfToolLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                showTool('pngToPdf');
-            });
-            pdfToJpgToolLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                showTool('pdfToJpg');
+                showPdfTool();
             });
             
             // ============================================
             // Photo Compression Tool (Existing Code)
             // ============================================
-            // [Existing photo compression code remains the same]
-            // ... (photo compression code from original)
+            // DOM Elements
+            const photoFileInput = document.getElementById('photoFileInput');
+            const photoUploadArea = document.getElementById('photoUploadArea');
+            const originalImage = document.getElementById('originalImage');
+            const compressedImage = document.getElementById('compressedImage');
+            const compressBtn = document.getElementById('compressBtn');
+            const resetPhotoBtn = document.getElementById('resetPhotoBtn');
+            const downloadPhotoBtn = document.getElementById('downloadPhotoBtn');
+            const qualitySlider = document.getElementById('quality');
+            const widthSlider = document.getElementById('maxWidth');
+            const qualityValue = document.getElementById('qualityValue');
+            const widthValue = document.getElementById('widthValue');
+            const originalSize = document.getElementById('originalSize');
+            const originalDimensions = document.getElementById('originalDimensions');
+            const compressedSize = document.getElementById('compressedSize');
+            const compressedDimensions = document.getElementById('compressedDimensions');
+            const sizeReduction = document.getElementById('sizeReduction');
+            const compressionRatio = document.getElementById('compressionRatio');
             
-            // ============================================
-            // PDF to PNG Converter Tool (Existing Code)
-            // ============================================
-            // [Existing PDF to PNG code remains the same]
-            // ... (PDF to PNG code from original)
+            // State variables
+            let originalFile = null;
+            let originalImageData = null;
+            let compressedImageData = null;
+            let compressedBlob = null;
             
-            // ============================================
-            // PNG to PDF Converter Tool (New Code)
-            // ============================================
-            const pngToPdfFileInput = document.getElementById('pngToPdfFileInput');
-            const pngToPdfUploadArea = document.getElementById('pngToPdfUploadArea');
-            const pngFileList = document.getElementById('pngFileList');
-            const pngImagesPreview = document.getElementById('pngImagesPreview');
-            const convertToPdfBtn = document.getElementById('convertToPdfBtn');
-            const resetPngToPdfBtn = document.getElementById('resetPngToPdfBtn');
-            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-            const pngImagesCount = document.getElementById('pngImagesCount');
-            const pngImagesTotalSize = document.getElementById('pngImagesTotalSize');
-            const pdfResultSize = document.getElementById('pdfResultSize');
-            const pdfResultPages = document.getElementById('pdfResultPages');
-            const pngToPdfConversionInfo = document.getElementById('pngToPdfConversionInfo');
-            const imageQualitySlider = document.getElementById('imageQuality');
-            const imageQualityValue = document.getElementById('imageQualityValue');
-            const layoutOptions = document.querySelectorAll('.layout-option');
-            const pageSizeSelect = document.getElementById('pageSize');
-            const addPageNumbersCheckbox = document.getElementById('addPageNumbers');
-            
-            // State variables for PNG to PDF tool
-            let pngFiles = [];
-            let pdfBlob = null;
-            
-            // Event Listeners for PNG to PDF tool
-            pngToPdfUploadArea.addEventListener('click', () => pngToPdfFileInput.click());
-            pngToPdfUploadArea.addEventListener('dragover', (e) => {
+            // Event Listeners for photo tool
+            photoUploadArea.addEventListener('click', () => photoFileInput.click());
+            photoUploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
-                pngToPdfUploadArea.style.borderColor = '#3498db';
-                pngToPdfUploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
+                photoUploadArea.style.borderColor = '#3498db';
+                photoUploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
             });
-            pngToPdfUploadArea.addEventListener('dragleave', () => {
-                pngToPdfUploadArea.style.borderColor = '#ecf0f1';
-                pngToPdfUploadArea.style.backgroundColor = 'transparent';
+            photoUploadArea.addEventListener('dragleave', () => {
+                photoUploadArea.style.borderColor = '#ecf0f1';
+                photoUploadArea.style.backgroundColor = 'transparent';
             });
-            pngToPdfUploadArea.addEventListener('drop', (e) => {
+            photoUploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
-                pngToPdfUploadArea.style.borderColor = '#ecf0f1';
-                pngToPdfUploadArea.style.backgroundColor = 'transparent';
+                photoUploadArea.style.borderColor = '#ecf0f1';
+                photoUploadArea.style.backgroundColor = 'transparent';
                 
                 if (e.dataTransfer.files.length) {
-                    handlePngFilesSelect(Array.from(e.dataTransfer.files));
+                    handlePhotoFileSelect(e.dataTransfer.files[0]);
                 }
             });
             
-            pngToPdfFileInput.addEventListener('change', (e) => {
+            photoFileInput.addEventListener('change', (e) => {
                 if (e.target.files.length) {
-                    handlePngFilesSelect(Array.from(e.target.files));
+                    handlePhotoFileSelect(e.target.files[0]);
                 }
             });
             
-            imageQualitySlider.addEventListener('input', () => {
-                imageQualityValue.textContent = imageQualitySlider.value;
+            qualitySlider.addEventListener('input', () => {
+                qualityValue.textContent = qualitySlider.value;
             });
             
-            // Layout options selection
-            layoutOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    layoutOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                });
+            widthSlider.addEventListener('input', () => {
+                widthValue.textContent = widthSlider.value;
             });
             
-            convertToPdfBtn.addEventListener('click', convertPngToPdf);
-            resetPngToPdfBtn.addEventListener('click', resetPngToPdf);
-            downloadPdfBtn.addEventListener('click', downloadPdf);
+            compressBtn.addEventListener('click', compressImage);
+            resetPhotoBtn.addEventListener('click', resetPhotoAll);
+            downloadPhotoBtn.addEventListener('click', downloadCompressedImage);
             
-            // Functions for PNG to PDF tool
-            function handlePngFilesSelect(files) {
-                // Filter only PNG files
-                const pngFilesArray = files.filter(file => 
-                    file.type === 'image/png' || file.name.toLowerCase().endsWith('.png')
-                );
-                
-                // Check if any PNG files were selected
-                if (pngFilesArray.length === 0) {
-                    alert('कृपया केवल PNG फाइलें अपलोड करें।');
+            // Functions for photo tool
+            function handlePhotoFileSelect(file) {
+                // Check if file is an image
+                if (!file.type.match('image.*')) {
+                    alert('कृपया केवल इमेज फाइल अपलोड करें (JPG, PNG, WebP)।');
                     return;
                 }
                 
-                // Check total number of files (max 20)
-                const totalFiles = pngFiles.length + pngFilesArray.length;
-                if (totalFiles > 20) {
-                    alert('आप अधिकतम 20 PNG फाइलें अपलोड कर सकते हैं।');
+                // Check file size (5MB limit)
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('फाइल का आकार 5MB से कम होना चाहिए।');
                     return;
                 }
                 
-                // Check file sizes (max 5MB each)
-                for (const file of pngFilesArray) {
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert(`फाइल "${file.name}" का आकार 5MB से कम होना चाहिए।`);
-                        return;
-                    }
-                }
+                originalFile = file;
                 
-                // Add new files to the array
-                pngFiles.push(...pngFilesArray);
+                // Display original file info
+                originalSize.textContent = `आकार: ${formatFileSize(file.size)}`;
                 
-                // Update UI
-                updatePngFilesList();
-                updatePngImagesPreview();
-                
-                // Enable convert button
-                convertToPdfBtn.disabled = false;
-            }
-            
-            function updatePngFilesList() {
-                // Clear the list
-                pngFileList.innerHTML = '';
-                
-                if (pngFiles.length === 0) {
-                    pngFileList.style.display = 'none';
-                    return;
-                }
-                
-                pngFileList.style.display = 'block';
-                
-                // Add each file to the list
-                let totalSize = 0;
-                pngFiles.forEach((file, index) => {
-                    totalSize += file.size;
-                    
-                    const fileItem = document.createElement('div');
-                    fileItem.className = 'file-item';
-                    fileItem.innerHTML = `
-                        <div class="file-name">${file.name}</div>
-                        <div class="file-size">${formatFileSize(file.size)}</div>
-                        <button class="remove-file" data-index="${index}">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    `;
-                    pngFileList.appendChild(fileItem);
-                });
-                
-                // Update file count and total size
-                pngImagesCount.textContent = `इमेजेस: ${pngFiles.length}`;
-                pngImagesTotalSize.textContent = `कुल आकार: ${formatFileSize(totalSize)}`;
-                
-                // Add event listeners to remove buttons
-                pngFileList.querySelectorAll('.remove-file').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const index = parseInt(this.getAttribute('data-index'));
-                        removePngFile(index);
-                    });
-                });
-            }
-            
-            function updatePngImagesPreview() {
-                // Clear preview
-                pngImagesPreview.innerHTML = '';
-                
-                if (pngFiles.length === 0) {
-                    pngImagesPreview.innerHTML = `
-                        <div class="image-placeholder">
-                            <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            <p>PNG इमेजेस अपलोड करने पर यहाँ दिखेंगी</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                // Show first 9 images in grid
-                const imagesToShow = pngFiles.slice(0, 9);
-                
-                imagesToShow.forEach((file, index) => {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const imgItem = document.createElement('div');
-                        imgItem.className = 'image-grid-item';
-                        imgItem.innerHTML = `
-                            <img src="${e.target.result}" alt="Image ${index + 1}">
-                            <div class="image-number">${index + 1}</div>
-                        `;
-                        pngImagesPreview.appendChild(imgItem);
+                // Display original image
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        originalDimensions.textContent = `डाइमेंशन: ${img.width} × ${img.height}`;
+                        originalImage.innerHTML = '';
+                        originalImage.appendChild(img);
+                        
+                        // Store original image data
+                        originalImageData = {
+                            src: e.target.result,
+                            width: img.width,
+                            height: img.height,
+                            size: file.size
+                        };
+                        
+                        // Enable compress button
+                        compressBtn.disabled = false;
                     };
-                    reader.readAsDataURL(file);
-                });
-                
-                // If there are more than 9 images, show a count
-                if (pngFiles.length > 9) {
-                    const moreItem = document.createElement('div');
-                    moreItem.className = 'image-grid-item';
-                    moreItem.style.display = 'flex';
-                    moreItem.style.alignItems = 'center';
-                    moreItem.style.justifyContent = 'center';
-                    moreItem.style.backgroundColor = 'var(--secondary-color)';
-                    moreItem.style.color = 'white';
-                    moreItem.style.fontWeight = 'bold';
-                    moreItem.innerHTML = `+${pngFiles.length - 9} more`;
-                    pngImagesPreview.appendChild(moreItem);
-                }
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
             }
             
-            function removePngFile(index) {
-                pngFiles.splice(index, 1);
-                updatePngFilesList();
-                updatePngImagesPreview();
-                
-                // Disable convert button if no files
-                if (pngFiles.length === 0) {
-                    convertToPdfBtn.disabled = true;
-                }
-            }
-            
-            async function convertPngToPdf() {
-                if (pngFiles.length === 0) {
-                    alert('कृपया पहले PNG इमेजेस अपलोड करें।');
+            function compressImage() {
+                if (!originalFile) {
+                    alert('कृपया पहले एक फोटो अपलोड करें।');
                     return;
                 }
                 
                 // Show loading state
-                convertToPdfBtn.classList.add('loading');
-                convertToPdfBtn.disabled = true;
+                compressBtn.classList.add('loading');
+                compressBtn.disabled = true;
                 
-                try {
-                    // Get settings
-                    const quality = parseInt(imageQualitySlider.value) / 100;
-                    const layout = document.querySelector('.layout-option.active').getAttribute('data-layout');
-                    const pageSize = pageSizeSelect.value;
-                    const addPageNumbers = addPageNumbersCheckbox.checked;
+                // Get compression settings
+                const quality = parseInt(qualitySlider.value) / 100;
+                const maxWidth = parseInt(widthSlider.value);
+                
+                // Create an image element with the original file
+                const img = new Image();
+                img.onload = function() {
+                    // Calculate new dimensions while maintaining aspect ratio
+                    let width = img.width;
+                    let height = img.height;
                     
-                    // Create PDF
-                    const { jsPDF } = window.jspdf;
-                    const pdf = new jsPDF({
-                        orientation: layout,
-                        unit: 'mm',
-                        format: pageSize
-                    });
-                    
-                    // Convert each image to base64 and add to PDF
-                    for (let i = 0; i < pngFiles.length; i++) {
-                        const file = pngFiles[i];
-                        
-                        // Convert file to base64
-                        const base64 = await fileToBase64(file);
-                        
-                        // Get image dimensions
-                        const img = new Image();
-                        await new Promise((resolve) => {
-                            img.onload = resolve;
-                            img.src = base64;
-                        });
-                        
-                        // Calculate dimensions for PDF
-                        const pageWidth = pdf.internal.pageSize.getWidth();
-                        const pageHeight = pdf.internal.pageSize.getHeight();
-                        
-                        let imgWidth = pageWidth - 20; // 10mm margin on each side
-                        let imgHeight = (img.height * imgWidth) / img.width;
-                        
-                        // If image is too tall, scale it down
-                        if (imgHeight > pageHeight - 20) {
-                            imgHeight = pageHeight - 20;
-                            imgWidth = (img.width * imgHeight) / img.height;
-                        }
-                        
-                        // Center the image
-                        const x = (pageWidth - imgWidth) / 2;
-                        const y = (pageHeight - imgHeight) / 2;
-                        
-                        // Add image to PDF
-                        pdf.addImage(base64, 'PNG', x, y, imgWidth, imgHeight, `image${i}`, 'MEDIUM');
-                        
-                        // Add page number if enabled
-                        if (addPageNumbers) {
-                            pdf.setFontSize(10);
-                            pdf.text(`Page ${i + 1} of ${pngFiles.length}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
-                        }
-                        
-                        // Add new page if not the last image
-                        if (i < pngFiles.length - 1) {
-                            pdf.addPage();
-                        }
+                    if (width > maxWidth) {
+                        height = Math.round((height * maxWidth) / width);
+                        width = maxWidth;
                     }
                     
-                    // Generate PDF blob
-                    const pdfBlobData = pdf.output('blob');
-                    pdfBlob = pdfBlobData;
+                    // Create canvas for compression
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
                     
-                    // Display PDF preview
-                    const pdfUrl = URL.createObjectURL(pdfBlobData);
-                    pdfResult.innerHTML = `
-                        <embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                    `;
+                    // Draw image on canvas with new dimensions
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
                     
-                    // Update PDF info
-                    pdfResultSize.textContent = `आकार: ${formatFileSize(pdfBlobData.size)}`;
-                    pdfResultPages.textContent = `पेज: ${pngFiles.length}`;
-                    
-                    // Update conversion info
-                    pngToPdfConversionInfo.innerHTML = `
-                        <p><strong>PDF बन गया!</strong></p>
-                        <p>${pngFiles.length} PNG इमेजेस PDF में कन्वर्ट हो गईं</p>
-                        <p>PDF आकार: ${formatFileSize(pdfBlobData.size)}</p>
-                    `;
-                    
-                    // Enable download button
-                    downloadPdfBtn.disabled = false;
-                    
-                } catch (error) {
-                    alert('PNG से PDF बनाने में त्रुटि: ' + error.message);
-                } finally {
-                    // Remove loading state
-                    convertToPdfBtn.classList.remove('loading');
-                    convertToPdfBtn.disabled = false;
-                }
+                    // Compress image
+                    canvas.toBlob(function(blob) {
+                        // Display compressed image
+                        const compressedUrl = URL.createObjectURL(blob);
+                        const compressedImg = new Image();
+                        compressedImg.onload = function() {
+                            compressedImage.innerHTML = '';
+                            compressedImage.appendChild(compressedImg);
+                            
+                            // Update compressed image info
+                            compressedSize.textContent = `आकार: ${formatFileSize(blob.size)}`;
+                            compressedDimensions.textContent = `डाइमेंशन: ${width} × ${height}`;
+                            
+                            // Calculate and display compression stats
+                            const originalSizeBytes = originalFile.size;
+                            const compressedSizeBytes = blob.size;
+                            const reduction = originalSizeBytes - compressedSizeBytes;
+                            const reductionPercent = ((reduction / originalSizeBytes) * 100).toFixed(1);
+                            const ratio = (originalSizeBytes / compressedSizeBytes).toFixed(1);
+                            
+                            sizeReduction.textContent = `${reductionPercent}%`;
+                            compressionRatio.textContent = `${ratio}:1`;
+                            
+                            // Store compressed data for download
+                            compressedBlob = blob;
+                            compressedImageData = {
+                                url: compressedUrl,
+                                width: width,
+                                height: height,
+                                size: compressedSizeBytes
+                            };
+                            
+                            // Enable download button
+                            downloadPhotoBtn.disabled = false;
+                            
+                            // Remove loading state
+                            compressBtn.classList.remove('loading');
+                            compressBtn.disabled = false;
+                        };
+                        compressedImg.src = compressedUrl;
+                        
+                    }, 'image/jpeg', quality);
+                };
+                
+                img.src = URL.createObjectURL(originalFile);
             }
             
-            function downloadPdf() {
-                if (!pdfBlob) return;
+            function downloadCompressedImage() {
+                if (!compressedBlob) return;
                 
                 const link = document.createElement('a');
-                link.href = URL.createObjectURL(pdfBlob);
-                link.download = `images_to_pdf_${new Date().getTime()}.pdf`;
+                link.href = URL.createObjectURL(compressedBlob);
+                link.download = `compressed_${originalFile.name.replace(/\.[^/.]+$/, "")}.jpg`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
             }
             
-            function resetPngToPdf() {
+            function resetPhotoAll() {
                 // Reset file input
-                pngToPdfFileInput.value = '';
+                photoFileInput.value = '';
                 
                 // Reset state variables
-                pngFiles = [];
-                pdfBlob = null;
+                originalFile = null;
+                originalImageData = null;
+                compressedImageData = null;
+                compressedBlob = null;
                 
                 // Reset UI
-                pngFileList.innerHTML = '';
-                pngFileList.style.display = 'none';
-                
-                pngImagesPreview.innerHTML = `
-                    <div class="image-placeholder">
-                        <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <p>PNG इमेजेस अपलोड करने पर यहाँ दिखेंगी</p>
-                    </div>
+                originalImage.innerHTML = `
+                    <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <p>फोटो अपलोड करने पर यहाँ दिखेगा</p>
+                `;
+                compressedImage.innerHTML = `
+                    <i class="fas fa-file-archive" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <p>कम्प्रेस्ड फोटो यहाँ दिखेगा</p>
                 `;
                 
-                pdfResult.innerHTML = `
-                    <i class="fas fa-file-pdf" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                    <p>कन्वर्टेड PDF यहाँ दिखेगा</p>
-                `;
+                originalSize.textContent = 'आकार: --';
+                originalDimensions.textContent = 'डाइमेंशन: --';
+                compressedSize.textContent = 'आकार: --';
+                compressedDimensions.textContent = 'डाइमेंशन: --';
+                sizeReduction.textContent = '--';
+                compressionRatio.textContent = '--';
                 
-                pngImagesCount.textContent = 'इमेजेस: 0';
-                pngImagesTotalSize.textContent = 'कुल आकार: --';
-                pdfResultSize.textContent = 'आकार: --';
-                pdfResultPages.textContent = 'पेज: --';
-                
-                // Reset settings
-                imageQualitySlider.value = 90;
-                imageQualityValue.textContent = '90';
-                
-                // Reset layout to portrait
-                layoutOptions.forEach(opt => opt.classList.remove('active'));
-                document.querySelector('.layout-option[data-layout="portrait"]').classList.add('active');
-                
-                pageSizeSelect.value = 'a4';
-                addPageNumbersCheckbox.checked = true;
-                
-                // Reset conversion info
-                pngToPdfConversionInfo.innerHTML = `
-                    <p>PNG इमेजेस अपलोड करें और PDF बनाने के लिए बटन दबाएं</p>
-                `;
+                // Reset sliders
+                qualitySlider.value = 70;
+                widthSlider.value = 1200;
+                qualityValue.textContent = '70';
+                widthValue.textContent = '1200';
                 
                 // Disable buttons
-                convertToPdfBtn.disabled = true;
-                downloadPdfBtn.disabled = true;
-            }
-            
-            // Helper function to convert file to base64
-            function fileToBase64(file) {
-                return new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onload = () => resolve(reader.result);
-                    reader.onerror = error => reject(error);
-                });
+                compressBtn.disabled = true;
+                downloadPhotoBtn.disabled = true;
             }
             
             // ============================================
-            // PDF to JPG Converter Tool (New Code)
+            // PDF to PNG Converter Tool (New Code)
             // ============================================
-            const pdfToJpgFileInput = document.getElementById('pdfToJpgFileInput');
-            const pdfToJpgUploadArea = document.getElementById('pdfToJpgUploadArea');
-            const pdfToJpgPreview = document.getElementById('pdfToJpgPreview');
-            const jpgResult = document.getElementById('jpgResult');
-            const convertPdfToJpgBtn = document.getElementById('convertPdfToJpgBtn');
-            const resetPdfToJpgBtn = document.getElementById('resetPdfToJpgBtn');
-            const downloadAllJpgBtn = document.getElementById('downloadAllJpgBtn');
-            const downloadSingleJpgBtn = document.getElementById('downloadSingleJpgBtn');
-            const jpgQualitySlider = document.getElementById('jpgQuality');
-            const jpgScaleSlider = document.getElementById('jpgScale');
-            const jpgQualityValue = document.getElementById('jpgQualityValue');
-            const jpgScaleValue = document.getElementById('jpgScaleValue');
-            const pdfToJpgFileSize = document.getElementById('pdfToJpgFileSize');
-            const pdfToJpgPageCount = document.getElementById('pdfToJpgPageCount');
-            const jpgCount = document.getElementById('jpgCount');
-            const jpgTotalSize = document.getElementById('jpgTotalSize');
-            const pdfToJpgConversionInfo = document.getElementById('pdfToJpgConversionInfo');
-            const convertAllPagesToJpgCheckbox = document.getElementById('convertAllPagesToJpg');
-            const pdfToJpgPageSelector = document.getElementById('pdfToJpgPageSelector');
-            const pdfToJpgPageRange = document.getElementById('pdfToJpgPageRange');
+            // DOM Elements for PDF tool
+            const pdfFileInput = document.getElementById('pdfFileInput');
+            const pdfUploadArea = document.getElementById('pdfUploadArea');
+            const pdfPreview = document.getElementById('pdfPreview');
+            const pngResult = document.getElementById('pngResult');
+            const convertPdfBtn = document.getElementById('convertPdfBtn');
+            const resetPdfBtn = document.getElementById('resetPdfBtn');
+            const downloadAllBtn = document.getElementById('downloadAllBtn');
+            const downloadSingleBtn = document.getElementById('downloadSingleBtn');
+            const pdfQualitySlider = document.getElementById('pdfQuality');
+            const pdfScaleSlider = document.getElementById('pdfScale');
+            const pdfQualityValue = document.getElementById('pdfQualityValue');
+            const pdfScaleValue = document.getElementById('pdfScaleValue');
+            const pdfFileSize = document.getElementById('pdfFileSize');
+            const pdfPageCount = document.getElementById('pdfPageCount');
+            const pngCount = document.getElementById('pngCount');
+            const pngTotalSize = document.getElementById('pngTotalSize');
+            const conversionInfo = document.getElementById('conversionInfo');
+            const convertAllPagesCheckbox = document.getElementById('convertAllPages');
+            const pageSelector = document.getElementById('pageSelector');
+            const pageRangeInput = document.getElementById('pageRange');
             
-            // State variables for PDF to JPG tool
-            let pdfToJpgFile = null;
-            let pdfToJpgDoc = null;
-            let jpgImages = [];
-            let jpgBlobs = [];
+            // State variables for PDF tool
+            let pdfFile = null;
+            let pdfDoc = null;
+            let pngImages = [];
+            let pngBlobs = [];
             
-            // Event Listeners for PDF to JPG tool
-            pdfToJpgUploadArea.addEventListener('click', () => pdfToJpgFileInput.click());
-            pdfToJpgUploadArea.addEventListener('dragover', (e) => {
+            // Event Listeners for PDF tool
+            pdfUploadArea.addEventListener('click', () => pdfFileInput.click());
+            pdfUploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
-                pdfToJpgUploadArea.style.borderColor = '#3498db';
-                pdfToJpgUploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
+                pdfUploadArea.style.borderColor = '#3498db';
+                pdfUploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
             });
-            pdfToJpgUploadArea.addEventListener('dragleave', () => {
-                pdfToJpgUploadArea.style.borderColor = '#ecf0f1';
-                pdfToJpgUploadArea.style.backgroundColor = 'transparent';
+            pdfUploadArea.addEventListener('dragleave', () => {
+                pdfUploadArea.style.borderColor = '#ecf0f1';
+                pdfUploadArea.style.backgroundColor = 'transparent';
             });
-            pdfToJpgUploadArea.addEventListener('drop', (e) => {
+            pdfUploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
-                pdfToJpgUploadArea.style.borderColor = '#ecf0f1';
-                pdfToJpgUploadArea.style.backgroundColor = 'transparent';
+                pdfUploadArea.style.borderColor = '#ecf0f1';
+                pdfUploadArea.style.backgroundColor = 'transparent';
                 
                 if (e.dataTransfer.files.length) {
-                    handlePdfToJpgFileSelect(e.dataTransfer.files[0]);
+                    handlePdfFileSelect(e.dataTransfer.files[0]);
                 }
             });
             
-            pdfToJpgFileInput.addEventListener('change', (e) => {
+            pdfFileInput.addEventListener('change', (e) => {
                 if (e.target.files.length) {
-                    handlePdfToJpgFileSelect(e.target.files[0]);
+                    handlePdfFileSelect(e.target.files[0]);
                 }
             });
             
-            jpgQualitySlider.addEventListener('input', () => {
-                jpgQualityValue.textContent = jpgQualitySlider.value;
+            pdfQualitySlider.addEventListener('input', () => {
+                pdfQualityValue.textContent = pdfQualitySlider.value;
             });
             
-            jpgScaleSlider.addEventListener('input', () => {
-                jpgScaleValue.textContent = jpgScaleSlider.value;
+            pdfScaleSlider.addEventListener('input', () => {
+                pdfScaleValue.textContent = pdfScaleSlider.value;
             });
             
-            convertPdfToJpgBtn.addEventListener('click', convertPdfToJpg);
-            resetPdfToJpgBtn.addEventListener('click', resetPdfToJpgAll);
-            downloadAllJpgBtn.addEventListener('click', downloadAllJpgs);
-            downloadSingleJpgBtn.addEventListener('click', downloadFirstJpg);
+            convertPdfBtn.addEventListener('click', convertPdfToPng);
+            resetPdfBtn.addEventListener('click', resetPdfAll);
+            downloadAllBtn.addEventListener('click', downloadAllPngs);
+            downloadSingleBtn.addEventListener('click', downloadFirstPng);
             
-            convertAllPagesToJpgCheckbox.addEventListener('change', function() {
+            convertAllPagesCheckbox.addEventListener('change', function() {
                 if (this.checked) {
-                    pdfToJpgPageSelector.style.display = 'none';
+                    pageSelector.style.display = 'none';
                 } else {
-                    pdfToJpgPageSelector.style.display = 'block';
+                    pageSelector.style.display = 'block';
                 }
             });
             
-            // Functions for PDF to JPG tool
-            function handlePdfToJpgFileSelect(file) {
+            // Functions for PDF tool
+            function handlePdfFileSelect(file) {
                 // Check if file is a PDF
                 if (!file.type.includes('pdf') && !file.name.toLowerCase().endsWith('.pdf')) {
                     alert('कृपया केवल PDF फाइल अपलोड करें।');
@@ -1963,10 +1414,10 @@
                     return;
                 }
                 
-                pdfToJpgFile = file;
+                pdfFile = file;
                 
                 // Display file info
-                pdfToJpgFileSize.textContent = `आकार: ${formatFileSize(file.size)}`;
+                pdfFileSize.textContent = `आकार: ${formatFileSize(file.size)}`;
                 
                 // Load PDF for preview
                 const reader = new FileReader();
@@ -1975,22 +1426,22 @@
                     
                     // Load PDF document
                     pdfjsLib.getDocument(typedarray).promise.then(function(doc) {
-                        pdfToJpgDoc = doc;
+                        pdfDoc = doc;
                         const numPages = doc.numPages;
-                        pdfToJpgPageCount.textContent = `पेज: ${numPages}`;
+                        pdfPageCount.textContent = `पेज: ${numPages}`;
                         
                         // Update conversion info
-                        pdfToJpgConversionInfo.innerHTML = `
+                        conversionInfo.innerHTML = `
                             <p><strong>PDF लोड हो गया!</strong></p>
                             <p>कुल पेज: ${numPages}</p>
-                            <p>JPG में कन्वर्ट करने के लिए बटन दबाएं</p>
+                            <p>PNG में कन्वर्ट करने के लिए बटन दबाएं</p>
                         `;
                         
                         // Show first page as preview
-                        renderPdfToJpgPagePreview(1);
+                        renderPagePreview(1);
                         
                         // Enable convert button
-                        convertPdfToJpgBtn.disabled = false;
+                        convertPdfBtn.disabled = false;
                     }).catch(function(error) {
                         alert('PDF लोड करने में त्रुटि: ' + error.message);
                     });
@@ -1998,10 +1449,10 @@
                 reader.readAsArrayBuffer(file);
             }
             
-            function renderPdfToJpgPagePreview(pageNum) {
-                if (!pdfToJpgDoc) return;
+            function renderPagePreview(pageNum) {
+                if (!pdfDoc) return;
                 
-                pdfToJpgDoc.getPage(pageNum).then(function(page) {
+                pdfDoc.getPage(pageNum).then(function(page) {
                     const scale = 1.5;
                     const viewport = page.getViewport({ scale: scale });
                     
@@ -2019,46 +1470,46 @@
                     
                     page.render(renderContext).promise.then(function() {
                         // Clear preview and add canvas
-                        pdfToJpgPreview.innerHTML = '';
+                        pdfPreview.innerHTML = '';
                         canvas.classList.add('pdf-page-preview');
-                        pdfToJpgPreview.appendChild(canvas);
+                        pdfPreview.appendChild(canvas);
                         
                         // Add page info
                         const pageInfo = document.createElement('p');
-                        pageInfo.textContent = `पेज ${pageNum} / ${pdfToJpgDoc.numPages}`;
+                        pageInfo.textContent = `पेज ${pageNum} / ${pdfDoc.numPages}`;
                         pageInfo.style.marginTop = '10px';
                         pageInfo.style.fontSize = '0.9rem';
-                        pdfToJpgPreview.appendChild(pageInfo);
+                        pdfPreview.appendChild(pageInfo);
                     });
                 });
             }
             
-            function convertPdfToJpg() {
-                if (!pdfToJpgDoc) {
+            function convertPdfToPng() {
+                if (!pdfDoc) {
                     alert('कृपया पहले एक PDF अपलोड करें।');
                     return;
                 }
                 
                 // Show loading state
-                convertPdfToJpgBtn.classList.add('loading');
-                convertPdfToJpgBtn.disabled = true;
+                convertPdfBtn.classList.add('loading');
+                convertPdfBtn.disabled = true;
                 
                 // Get conversion settings
-                const quality = parseInt(jpgQualitySlider.value) / 100;
-                const scale = parseFloat(jpgScaleSlider.value);
+                const quality = parseInt(pdfQualitySlider.value) / 100;
+                const scale = parseFloat(pdfScaleSlider.value);
                 
                 // Determine which pages to convert
                 let pagesToConvert = [];
-                const totalPages = pdfToJpgDoc.numPages;
+                const totalPages = pdfDoc.numPages;
                 
-                if (convertAllPagesToJpgCheckbox.checked) {
+                if (convertAllPagesCheckbox.checked) {
                     // Convert all pages
                     for (let i = 1; i <= totalPages; i++) {
                         pagesToConvert.push(i);
                     }
                 } else {
                     // Parse page range input
-                    const pageRange = pdfToJpgPageRange.value.trim();
+                    const pageRange = pageRangeInput.value.trim();
                     if (pageRange === '') {
                         // Convert all pages if input is empty
                         for (let i = 1; i <= totalPages; i++) {
@@ -2105,14 +1556,14 @@
                 }
                 
                 // Reset previous results
-                jpgImages = [];
-                jpgBlobs = [];
+                pngImages = [];
+                pngBlobs = [];
                 
                 // Convert each page
                 const conversionPromises = [];
                 
                 pagesToConvert.forEach(function(pageNum) {
-                    const promise = pdfToJpgDoc.getPage(pageNum).then(function(page) {
+                    const promise = pdfDoc.getPage(pageNum).then(function(page) {
                         const viewport = page.getViewport({ scale: scale });
                         
                         // Prepare canvas for rendering
@@ -2128,7 +1579,7 @@
                         };
                         
                         return page.render(renderContext).promise.then(function() {
-                            // Convert canvas to JPG blob
+                            // Convert canvas to PNG blob
                             return new Promise(function(resolve) {
                                 canvas.toBlob(function(blob) {
                                     resolve({
@@ -2137,7 +1588,7 @@
                                         width: canvas.width,
                                         height: canvas.height
                                     });
-                                }, 'image/jpeg', quality);
+                                }, 'image/png', quality);
                             });
                         });
                     });
@@ -2149,65 +1600,65 @@
                 Promise.all(conversionPromises).then(function(results) {
                     // Store results
                     results.forEach(function(result) {
-                        jpgBlobs.push(result);
+                        pngBlobs.push(result);
                         
                         // Create image URL for preview (only first image)
-                        if (jpgImages.length === 0) {
+                        if (pngImages.length === 0) {
                             const url = URL.createObjectURL(result.blob);
-                            jpgImages.push({
+                            pngImages.push({
                                 url: url,
                                 pageNum: result.pageNum
                             });
                             
                             // Show first image in preview
-                            jpgResult.innerHTML = '';
+                            pngResult.innerHTML = '';
                             const img = document.createElement('img');
                             img.src = url;
                             img.alt = `PDF Page ${result.pageNum}`;
-                            jpgResult.appendChild(img);
+                            pngResult.appendChild(img);
                         }
                     });
                     
                     // Update UI with results
-                    jpgCount.textContent = `JPG: ${results.length}`;
+                    pngCount.textContent = `PNG: ${results.length}`;
                     
                     // Calculate total size
                     let totalSize = 0;
                     results.forEach(function(result) {
                         totalSize += result.blob.size;
                     });
-                    jpgTotalSize.textContent = `कुल आकार: ${formatFileSize(totalSize)}`;
+                    pngTotalSize.textContent = `कुल आकार: ${formatFileSize(totalSize)}`;
                     
                     // Update conversion info
-                    pdfToJpgConversionInfo.innerHTML = `
+                    conversionInfo.innerHTML = `
                         <p><strong>कन्वर्जन पूरा!</strong></p>
-                        <p>${results.length} पेज JPG में कन्वर्ट हो गए</p>
+                        <p>${results.length} पेज PNG में कन्वर्ट हो गए</p>
                         <p>कुल आकार: ${formatFileSize(totalSize)}</p>
                     `;
                     
                     // Enable download buttons
-                    downloadAllJpgBtn.disabled = false;
-                    downloadSingleJpgBtn.disabled = false;
+                    downloadAllBtn.disabled = false;
+                    downloadSingleBtn.disabled = false;
                     
                     // Remove loading state
-                    convertPdfToJpgBtn.classList.remove('loading');
-                    convertPdfToJpgBtn.disabled = false;
+                    convertPdfBtn.classList.remove('loading');
+                    convertPdfBtn.disabled = false;
                     
                 }).catch(function(error) {
-                    alert('PDF को JPG में कन्वर्ट करने में त्रुटि: ' + error.message);
-                    convertPdfToJpgBtn.classList.remove('loading');
-                    convertPdfToJpgBtn.disabled = false;
+                    alert('PDF को PNG में कन्वर्ट करने में त्रुटि: ' + error.message);
+                    convertPdfBtn.classList.remove('loading');
+                    convertPdfBtn.disabled = false;
                 });
             }
             
-            function downloadAllJpgs() {
-                if (jpgBlobs.length === 0) return;
+            function downloadAllPngs() {
+                if (pngBlobs.length === 0) return;
                 
-                // Create a ZIP file containing all JPGs
+                // Create a ZIP file containing all PNGs
                 const zip = new JSZip();
                 
-                jpgBlobs.forEach(function(item) {
-                    const fileName = `page_${item.pageNum}.jpg`;
+                pngBlobs.forEach(function(item) {
+                    const fileName = `page_${item.pageNum}.png`;
                     zip.file(fileName, item.blob);
                 });
                 
@@ -2216,71 +1667,71 @@
                     // Download ZIP file
                     const link = document.createElement('a');
                     link.href = URL.createObjectURL(content);
-                    link.download = `pdf_to_jpg_${pdfToJpgFile.name.replace(/\.[^/.]+$/, "")}.zip`;
+                    link.download = `pdf_converted_${pdfFile.name.replace(/\.[^/.]+$/, "")}.zip`;
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
                 });
             }
             
-            function downloadFirstJpg() {
-                if (jpgBlobs.length === 0) return;
+            function downloadFirstPng() {
+                if (pngBlobs.length === 0) return;
                 
-                // Download the first JPG
-                const firstJpg = jpgBlobs[0];
+                // Download the first PNG
+                const firstPng = pngBlobs[0];
                 const link = document.createElement('a');
-                link.href = URL.createObjectURL(firstJpg.blob);
-                link.download = `page_${firstJpg.pageNum}.jpg`;
+                link.href = URL.createObjectURL(firstPng.blob);
+                link.download = `page_${firstPng.pageNum}.png`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
             }
             
-            function resetPdfToJpgAll() {
+            function resetPdfAll() {
                 // Reset file input
-                pdfToJpgFileInput.value = '';
+                pdfFileInput.value = '';
                 
                 // Reset state variables
-                pdfToJpgFile = null;
-                pdfToJpgDoc = null;
-                jpgImages = [];
-                jpgBlobs = [];
+                pdfFile = null;
+                pdfDoc = null;
+                pngImages = [];
+                pngBlobs = [];
                 
                 // Reset UI
-                pdfToJpgPreview.innerHTML = `
+                pdfPreview.innerHTML = `
                     <i class="fas fa-file-pdf" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                     <p>PDF अपलोड करने पर यहाँ दिखेगा</p>
                 `;
-                jpgResult.innerHTML = `
+                pngResult.innerHTML = `
                     <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                    <p>कन्वर्टेड JPG यहाँ दिखेगा</p>
+                    <p>कन्वर्टेड PNG यहाँ दिखेगा</p>
                 `;
                 
-                pdfToJpgFileSize.textContent = 'आकार: --';
-                pdfToJpgPageCount.textContent = 'पेज: --';
-                jpgCount.textContent = 'JPG: --';
-                jpgTotalSize.textContent = 'कुल आकार: --';
+                pdfFileSize.textContent = 'आकार: --';
+                pdfPageCount.textContent = 'पेज: --';
+                pngCount.textContent = 'PNG: --';
+                pngTotalSize.textContent = 'कुल आकार: --';
                 
                 // Reset sliders
-                jpgQualitySlider.value = 85;
-                jpgScaleSlider.value = 1.5;
-                jpgQualityValue.textContent = '85';
-                jpgScaleValue.textContent = '1.5';
+                pdfQualitySlider.value = 90;
+                pdfScaleSlider.value = 2;
+                pdfQualityValue.textContent = '90';
+                pdfScaleValue.textContent = '2.0';
                 
                 // Reset checkbox and page selector
-                convertAllPagesToJpgCheckbox.checked = true;
-                pdfToJpgPageSelector.style.display = 'none';
-                pdfToJpgPageRange.value = '';
+                convertAllPagesCheckbox.checked = true;
+                pageSelector.style.display = 'none';
+                pageRangeInput.value = '';
                 
                 // Reset conversion info
-                pdfToJpgConversionInfo.innerHTML = `
-                    <p>PDF अपलोड करें और JPG में कन्वर्ट करने के लिए बटन दबाएं</p>
+                conversionInfo.innerHTML = `
+                    <p>PDF अपलोड करें और PNG में कन्वर्ट करने के लिए बटन दबाएं</p>
                 `;
                 
                 // Disable buttons
-                convertPdfToJpgBtn.disabled = true;
-                downloadAllJpgBtn.disabled = true;
-                downloadSingleJpgBtn.disabled = true;
+                convertPdfBtn.disabled = true;
+                downloadAllBtn.disabled = true;
+                downloadSingleBtn.disabled = true;
             }
             
             // ============================================
@@ -2296,11 +1747,9 @@
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
             
-            // Initialize all tools
+            // Initialize the app
             resetPhotoAll();
             resetPdfAll();
-            resetPngToPdf();
-            resetPdfToJpgAll();
         });
     </script>
     <amp-auto-ads type="adsense"
