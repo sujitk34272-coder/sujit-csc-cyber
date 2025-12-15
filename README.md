@@ -918,7 +918,6 @@
                 <i class="fas fa-images"></i> PNG से PDF
             </button>
             <button class="tab-btn" id="pdfToJpgTabBtn" data-tool="pdfToJpg">
-                <i class="fas fa-file-image"></i> PDF से JPG
             </button>
         </div>
     </div>
