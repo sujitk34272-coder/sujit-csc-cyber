@@ -1,18 +1,3 @@
-const API_KEY = 'xqf7bdmeWqdbhqt8HySjcdbW'; // replace with your actual key
-const endpoint = 'https://api.example.com/remove'; // example
-
-async function processImage(file) {
-  const formData = new FormData();
-  formData.append('image', file);
-  formData.append('api_key', API_KEY);
-
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    body: formData,
-  });
-  const result = await response.blob();
-  // then display result
-}
 <!DOCTYPE html>
 <html lang="hi">
 <head>
